@@ -7,17 +7,35 @@ public class IndexAlghoritm implements Alghoritm {
 
     @Override
     public int solve(int[] input) {
-        int i = 0;
-        int j = input.length - 1;
-        int nZero = 0;
-        do{
-            if(input[i] != 0){
-                i++;
-            }
-            else 
-        }while (j > i);
+        if(input == null || input.length == 0){
+            return 0;
+        }
 
-        return nZero;
+        final int inputSize = input.length;
+        int i = 0;
+        int k = 0;
+        int zeroCounter = 0;
+        for (;i < inputSize && k < inputSize; i++, k++){
+            if(input[i] == 0){
+                zeroCounter++;
+                boolean isFound = false;
+                for(k = i+1; k < inputSize && !isFound; k++) {
+                    if(input[k] !=0 ){
+                        int tmp = input[i];
+                        input[i] = input[k];
+                        input[k] = tmp;
+                        isFound = true;
+                    }
+                    else{
+                        zeroCounter++;
+                    }
+                }
+            }
+        }
+        while(i < inputSize){
+            input[i++] = 0;
+        }
+        return zeroCounter;
     }
 
     @Override

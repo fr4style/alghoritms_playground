@@ -1,6 +1,7 @@
 package com.fflorio;
 
 import com.fflorio.solutions.Alghoritm;
+import com.fflorio.solutions.ArrayAlghoritm;
 import com.fflorio.solutions.IndexAlghoritm;
 
 import java.util.Arrays;
@@ -12,15 +13,21 @@ import java.util.Locale;
 public class Main {
 
     public static void main(String[] args) {
-        final int defaultInput[] = { 1, 0, 3, 4, 0, -1, 5, 0, 5, 0, 0, 0, 0, 2, 0 };
-        System.out.println("Input: "+Arrays.toString(defaultInput)+"\n");
+        final int defaultInput[] = { 1, 1, 0, 3, 4, 0, -1, 5, 0, 5, 0, 0, 0, 0, 2, 0 };
+        final Alghoritm[] alghoritms = {new IndexAlghoritm(), new ArrayAlghoritm()};
+        solveWith(defaultInput, alghoritms);
+        solveWith(new int[]{0}, alghoritms);
+        solveWith(new int[]{1}, alghoritms);
+        solveWith(new int[10000], alghoritms);
+        solveWith(null, alghoritms);
+        solveWith(new int[]{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, alghoritms);
 
-        solveWith(defaultInput, new IndexAlghoritm());
     }
 
     private static void solveWith(final int[] input, Alghoritm... algorithms){
+        System.out.println("Input: "+Arrays.toString(input)+"\n");
         for(Alghoritm algorithm : algorithms){
-            final int[] inputClone = input.clone();
+            final int[] inputClone = input == null ? null : input.clone();
             final long t1 = System.currentTimeMillis();
             final int zeroCount = algorithm.solve(inputClone);
             printOutput(algorithm.label(), inputClone, zeroCount, System.currentTimeMillis() - t1);
