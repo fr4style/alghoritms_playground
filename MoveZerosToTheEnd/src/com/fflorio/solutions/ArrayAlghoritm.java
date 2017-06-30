@@ -10,7 +10,7 @@ public class ArrayAlghoritm implements Alghoritm {
         if(input == null || input.length == 0){
             return 0;
         }
-        
+
         final int inputSize = input.length;
         final int[] indexArray1Based = new int[inputSize];
 

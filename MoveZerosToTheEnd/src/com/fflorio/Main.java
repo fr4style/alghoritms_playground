@@ -21,6 +21,7 @@ public class Main {
         solveWith(new int[10000], alghoritms);
         solveWith(null, alghoritms);
         solveWith(new int[]{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, alghoritms);
+        solveWith(new int[]{0,1,2,3,4,5,6,7,8,9,10}, alghoritms);
 
     }
 

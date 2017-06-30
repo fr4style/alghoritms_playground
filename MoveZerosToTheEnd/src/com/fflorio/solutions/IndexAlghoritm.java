@@ -15,7 +15,7 @@ public class IndexAlghoritm implements Alghoritm {
         int i = 0;
         int k = 0;
         int zeroCounter = 0;
-        for (;i < inputSize && k < inputSize; i++, k++){
+        for (;i < inputSize && k < inputSize; i++){
             if(input[i] == 0){
                 zeroCounter++;
                 boolean isFound = false;
@@ -30,6 +30,8 @@ public class IndexAlghoritm implements Alghoritm {
                         zeroCounter++;
                     }
                 }
+            }else{
+                k++;
             }
         }
         while(i < inputSize){
