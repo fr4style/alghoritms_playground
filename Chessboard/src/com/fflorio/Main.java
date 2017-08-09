@@ -2,6 +2,7 @@ package com.fflorio;
 
 import com.fflorio.alghoritms.BreadhFirstChessboardAlghoritm;
 import com.fflorio.alghoritms.ChessboardAlghoritm;
+import com.fflorio.alghoritms.SmartChessboardAlghoritm;
 
 /**
  :: CHESSBOARD ::
@@ -75,7 +76,7 @@ public class Main {
                         "ababd",
                         "babab",
                         "ababa"}, 2),
-            //    new Input(new String[]{ "abc", "def", "ghi"}, 7),
+                new Input(new String[]{ "abc", "def", "ghi"}, 7),
                 new Input( new String[]{
                         "yyxyxy",
                         "yxyxyx",
@@ -89,12 +90,16 @@ public class Main {
                         "xyxyxy",
                         "yxyxyx",
                         "xyxyxy",
-                        "yxyxyx"}, 0)
+                        "yxyxyx"}, 0),
+                new Input(new String[]{
+                        "aaa",
+                        "bab",
+                        "aaa"}, 2)
         };
 
         int i = 0;
         for(Input input : inputs) {
-            processInput(++i, input, new BreadhFirstChessboardAlghoritm());
+            processInput(++i, input, /*new BreadhFirstChessboardAlghoritm(),*/ new SmartChessboardAlghoritm());
         }
     }
 

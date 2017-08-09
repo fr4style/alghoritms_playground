@@ -3,6 +3,8 @@ package com.fflorio.alghoritms;
 import java.util.*;
 
 /**
+ * This solution has memory problems
+ * 
  * Created by francesco on 2017-08-09.
  */
 public class BreadhFirstChessboardAlghoritm implements ChessboardAlghoritm {
